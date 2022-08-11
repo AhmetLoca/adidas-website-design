@@ -27,7 +27,7 @@ body{
   align-items:center;
   justify-content:space-between;
   padding:20px;
-  border: 1px solid #ffffff;
+  /* border: 1px solid #ffffff; */
   margin:20px;
 }
 
@@ -103,13 +103,15 @@ içeriğin başına ve sonuna eklenir.
   line-height:60px;
   font-weight: bolder;
   letter-spacing:3px;
-  margin:25px 0;
+  margin-left:50px;
 }
 
 .container .row .col-2 p{
   color:#ffffff;
   font-size:14px;
   line-height:30px;
+  margin-top:20px;
+  margin-left:60px;
 }
 
 /*buton*/
@@ -118,12 +120,13 @@ içeriğin başına ve sonuna eklenir.
   text-decoration: none;
   color:#ffffff;
   padding:8px 20px;
-  background-color:rgb(254,220,55,0.8);
+  background-color:#fed81ae3;
   border-radius:35px;
   margin-top:45px;
   font-weight: 800;
   font-size:15px;
   transition: .3s all ease;
+  margin-left:50px;
 }
 
 .container .row .col-2 .btn:hover{
@@ -151,5 +154,78 @@ içeriğin başına ve sonuna eklenir.
   background:transparent;
   border:3px solid #3c3c3c;
   border-radius:50%;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
   z-index:-1;
 }
+
+/*daire yapimi*/
+.col-2 .ring:before{
+  content:'';
+  position:absolute; /*absolute sayesinde top,left,bottom gibi
+                      konumlandırma yapabiliyoruz.*/
+  top:-3px;
+  left:-3px;
+  width:100%;
+  height:100%;
+  border:3px solid transparent;
+  border-top : 3px solid #fcd120;
+  border-right:3px solid #fcd120;
+  border-radius:50%;
+  z-index:-1;
+  /* animation-name:returnCircle;
+  animation-timing-function: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function:linear; */
+  animation:returnCircle 10s linear infinite;
+}
+
+.col-2 .ring .circle {
+  display:block;
+  position:absolute;/*konumlandirma yapacagim için absolute verdik*/
+  top:50%;
+  left:50%;
+  width:50%;
+  height:4px;
+  background-color:transparent;
+  transform-origin:left;
+  animation:littleCircle 10s linear infinite;
+  z-index:-1;
+}
+
+/*küçük daireyi yapalim*/
+.col-2 .ring .circle:before{
+  content:'';
+  position:absolute;
+  top:-6px;
+  right:-9px;
+  width:16px;
+  height:16px;
+  background: #fcd120;
+  z-index:-1;
+  border-radius: 50%;
+  box-shadow:0 0 20px #fcd120; /*küçük dairenin parlaklığı*/
+
+}
+
+@keyframes returnCircle{
+  0%{
+    transform:rotate(0deg);
+  }
+  100%{
+    transform:rotate(360deg);
+  }
+}
+
+
+@keyframes littleCircle{
+    0%{
+      transform : rotate(45deg);
+    }
+    100%{
+      transform: rotate(405deg);
+    }
+}
+
+
+
+
