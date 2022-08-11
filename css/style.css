@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap');
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Rubik', sans-serif;
+}
+
+body{
+  background:#000000;
+  overflow:hidden; /*sayfada scroll'un cıkmasını önledik.*/
+
+}
+
+.container{
+  max-width:1300px; /*maximum ulaşabileceği genişlik 1300px.*/
+  margin:auto;
+  /* padding-left:25px;
+  padding-right:25px; */
+  
+}
+
+.container .header{
+  display:flex;
+  /* color:white; */
+  align-items:center;
+  justify-content:space-between;
+  padding:20px;
+  border: 1px solid #ffffff;
+  margin:20px;
+}
+
+/*Arka plandaki ADIDAS yazısını yazalım. before ve after sözde sınıflarını kullanarak yapacagım. before ve after, tanımlandıgı elemanla ilgili
+içeriğin başına ve sonuna eklenir.
+*/
+
+
+/*Arka plan ADIDAS yazısı.*/
+.container .header:before{
+  content : 'ADIDAS'; /*Arkadaki before yazısı.*/
+  position:absolute;
+  top:58%;
+  left:53%;
+  color:rgba(180,164,164,0.603);
+  font-size:150px;
+  opacity: 0.1;
+  letter-spacing:5px;
+  font-weight:bold;
+  z-index:-1; /*ayakkabı ön planda yazı arka planda olması 
+  için -1 verdik.*/
+}
+
+
+/* iconlarımız*/
+.container .header i{ 
+  color:#ffffff;
+  cursor:pointer;
+}
+
+
+/* logodaki adidas yazısı */
+.container .header p{
+  color:#ffffff;
+  font-weight:bold;
+  cursor:pointer;
+  font-size:25px;
+}
+
+.container .header .logo{ /* 3 çizgi vermek için */
+  display:flex;
+  align-items:center;
+  cursor:pointer;
+}
+
+/* 3 çizgimiz */
+.container .header .line{
+  display:block; /* alt alta gelsin*/
+  width:55px;
+  height:2px;
+  background-color:#ffffff;
+  margin-bottom:4px;
+  margin-right:5px;
+  margin-top:5px;
+}
+
+/* Row - Section */
+.container .row{
+  display:flex;
+  align-items:center;
+  justify-content:space-around;
+  flex-wrap:wrap;
+}
+
+.container .col-2{
+  flex-basis:50%; /*ana kısmı 50% 50% olarak iki kısma böldük.*/
+  min-width:300px;
+}
+
+.container .row .col-2 h1{
+  color:#ffffff;
+  font-size:60px; 
+  line-height:60px;
+  font-weight: bolder;
+  letter-spacing:3px;
+  margin:25px 0;
+}
+
+.container .row .col-2 p{
+  color:#ffffff;
+  font-size:14px;
+  line-height:30px;
+}
+
+/*buton*/
+.container .row .col-2 .btn{
+  display:inline-block;
+  text-decoration: none;
+  color:#ffffff;
+  padding:8px 20px;
+  background-color:rgb(254,220,55,0.8);
+  border-radius:35px;
+  margin-top:45px;
+  font-weight: 800;
+  font-size:15px;
+  transition: .3s all ease;
+}
+
+.container .row .col-2 .btn:hover{
+  background-color:#75640ee7;
+}
+
+
+/* Ring - Section */
+
+.col-2 .ring img{
+  width:100%;
+  max-width:510px;
+}
+
+#circle-ring{
+  padding-left:70px;
+  padding-top:40px;
+
+}
+
+.col-2 .ring{
+  position:relative;
+  width:400px;
+  height:400px;
+  background:transparent;
+  border:3px solid #3c3c3c;
+  border-radius:50%;
+  z-index:-1;
+}
